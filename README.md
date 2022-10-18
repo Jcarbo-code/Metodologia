@@ -68,16 +68,16 @@ INSERT INTO `turnos` (`paciente_dni`,`fecha`,`hora`,`turno`,`medica_personal_use
 
 INSERT INTO paciente (dni, nombre, apellido, direccion, telefono, email, obra_social, nro_afiliado) 
 VALUES
-(`5743495092`,`Egor`,`Streatley`,`028 Pennsylvania Circle`,`9484666010`,`estreatley0@goo.ne`.`jp`,`IOMA`,`1`),
-(`1055665978`,`Olivette`,`Banger`,`2020 Fairview Place`,`4982871298`,`obanger1@irs.gov`,`OSDE`,`2`),
-(`4142239341`,`Tiffany`,`Dresse`,`3030 Garrison Center`,`8895118528`,`tdresse2@fema.gov`,`IOMA`,`3`),
-(`1660472350`,`Prescott`,`Jostan`,`0 Troy Point`,`1358814587`,`pjostan3@1und1.de`,`OSDE`,`4`),
-(`1539816508`,`Rafael`,`Ellingham`,`562 Comanche Circle`,`7061233509`,`rellingham4@bandcamp.com`,`OSECAC`,`5`),
-(`2149139219`,`Ollie`,`Arderne`,`6122 Village Road`,`4233642979`,`oarderne5@tamu.edu`,`AVALANT`,`6`),
-(`7548394454`,`Pasquale`,`Pogue`,`1584 Little Fleur Pass`,`6516103428`,`ppogue6@irs.gov`,`OSDE`,`7`),
-(`6101268861`,`Odo`,`Missington`,`116 Monica Trail`,`5844831464`,`omissington7@about.me`,`IOMA`,`8`),
-(`1403650462`,`Anabelle`,`Wetherick`,`09 Nelson Plaza`,`1101057437`,`awetherick8@ed.gov`,`AVALANT`,`9`),
-(`1857749634`,`Matilda`,`Lewcock`,`0463 Dexter Lane`,`6703982163`,`mlewcock9@wsj.com`,`IOMA`,`10`);
+('57434950','Egor','Streatley','028 Pennsylvania Circle','9484666010','estreatley0@goo.ne','IOMA','1'),
+('10556659','Olivette','Banger','2020 Fairview Place','4982871298','obanger1@irs.gov','OSDE','2'),
+('41422393','Tiffany','Dresse','3030 Garrison Center','8895118528','tdresse2@fema.gov','IOMA','3'),
+('16604723','Prescott','Jostan','0 Troy Point','1358814587','pjostan3@1und1.de','OSDE','4'),
+('15398165','Rafael','Ellingham','562 Comanche Circle','7061233509','rellingham4@bandcamp.com','OSECAC','5'),
+('21491392','Ollie','Arderne','6122 Village Road','4233642979','oarderne5@tamu.edu','AVALANT','6'),
+('75483944','Pasquale','Pogue','1584 Little Fleur Pass','6516103428','ppogue6@irs.gov','OSDE','7'),
+('61012688','Odo','Missington','116 Monica Trail','5844831464','omissington7@about.me','IOMA','8'),
+('14036504','Anabelle','Wetherick','09 Nelson Plaza','1101057437','awetherick8@ed.gov','AVALANT','9'),
+('18577496','Matilda','Lewcock','0463 Dexter Lane','6703982163','mlewcock9@wsj.com','IOMA','10');
 
 
 
