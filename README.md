@@ -24,31 +24,6 @@ VALUES ('amenier'), ('eleanor'), ('farlin');
 INSERT INTO medica (especialidad,obra_social,personal_user,secretario_personal_user) 
 VALUES ('Psiquiatría','IOMA','ema98','amenier'), ('Pediatría','OSDE','fran67','amenier'), ('Geriatría','IOMA','jacket','eleanor'), ('Cardiología','OSECAC','cletus','eleanor'), ('Pediatría','AVALANT','seymurr','eleanor'), ('Rehabilitación','OSDE','claibyn','farlin'), ('Cardiología','OSDE','ferdina','farlin');
 
--- TURNOS
-
-INSERT INTO turnos (paciente_dni,fecha,hora,turno,medica_personal_user) 
-VALUES (41258017,'18/10/2022','11:00','m','ema98'), 
-(56801956,'20/10/2022','13:00','t','ema98'), 
-(46817160,'20/10/2022','15:50','t','fran67'), 
-(48515601,'22/10/2022,10:00','m','claibyn'), 
-(41258017,'29/10/2022','09:30','m','jacket'), 
-(61848950,'30/10/2022','17:25','t','ferdina'), 
-(10000000,'30/10/2022,18:00','t','fran67'), 
-(51286569,'01/11/2022,07:00','m','seymurr'), 
-(40186985,'12/11/2022,13:20','t','claibyn'), 
-(37891880,'15/11/2022,08:55','t','seymurr'), 
-(48156891,'16/11/2022,06:50','m','seymurr'), 
-(42681890,'18/11/2022,10:10','m','cletus'), 
-(18650785,'19/11/2022,09:20','m','cletus'), 
-(48965154,'20/11/2022,08:50','m','cletus'), 
-(55555555,'20/11/2022,16:55','t','seymurr'),
-(41258017,'18/10/2022,11:00','m','ema98'), 
-(56801956,'20/10/2022,13:00','t','ema98'), 
-(46817160,'20/10/2022,15:50','t','fran67'), 
-(48515601,'22/10/2022,10:00','m','claibyn'), 
-(41258017,'29/10/2022,09:30','m','jacket'), 
-(61848950,'30/10/2022,17:25','t','ferdina');
-
 -- PACIENTE
 
 INSERT INTO paciente (dni, nombre, apellido, direccion, telefono, email, obra_social, nro_afiliado) 
@@ -62,3 +37,28 @@ VALUES ('57434950','Egor','Streatley','028 Pennsylvania Circle','9484666010','es
 ('61012688','Odo','Missington','116 Monica Trail','5844831464','omissington7@about.me','IOMA','8'), 
 ('14036504','Anabelle','Wetherick','09 Nelson Plaza','1101057437','awetherick8@ed.gov','AVALANT','9'), 
 ('18577496','Matilda','Lewcock','0463 Dexter Lane','6703982163','mlewcock9@wsj.com','IOMA','10');
+
+-- TURNOS
+
+INSERT INTO turnos (paciente_dni,fecha,hora,turno,medica_personal_user) 
+VALUES (57434950,'18/10/2022','11:00','m','ema98'), 
+(57434950,'20/10/2022','13:00','t','ema98'), 
+(10556659,'20/10/2022','15:50','t','fran67'), 
+(10556659,'22/10/2022,10:00','m','claibyn'), 
+(41422393,'29/10/2022','09:30','m','jacket'), 
+(41422393,'30/10/2022','17:25','t','ferdina'), 
+(16604723,'30/10/2022,18:00','t','fran67'), 
+(16604723,'01/11/2022,07:00','m','seymurr'), 
+(15398165,'12/11/2022,13:20','t','claibyn'), 
+(15398165,'15/11/2022,08:55','t','seymurr'), 
+(21491392,'16/11/2022,06:50','m','seymurr'), 
+(21491392,'18/11/2022,10:10','m','cletus'), 
+(75483944,'19/11/2022,09:20','m','cletus'), 
+(75483944,'20/11/2022,08:50','m','cletus'), 
+(61012688,'20/11/2022,16:55','t','seymurr'),
+(61012688,'18/10/2022,11:00','m','ema98'), 
+(14036504,'20/10/2022,13:00','t','ema98'), 
+(14036504,'20/10/2022,15:50','t','fran67'), 
+(18577496,'22/10/2022,10:00','m','claibyn'), 
+(18577496,'29/10/2022,09:30','m','jacket'), 
+(18577496,'30/10/2022,17:25','t','ferdina');
