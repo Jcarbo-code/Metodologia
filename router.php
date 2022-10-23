@@ -37,6 +37,9 @@ switch ($params[0]) {
         $usuariosController->desconectar();
         break;
         //error URL
+    case 'turnosMedico':
+        $turnoFacilController->showTurnos();
+        break;
     default:
         $turnoFacilController->showError();
         break;

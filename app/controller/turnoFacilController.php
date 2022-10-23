@@ -1,17 +1,20 @@
 <?php
 require_once('app/view/turnoFacilView.php');
-
+require_once('app/models/turnosModel.php');
+require_once('helpers/auth.helper.php');
 
 //controlador de turno facil
 class turnoFacilController
 {
     private $peliculasView;
-    
+    private $helper;
 
     //llamo al pelis model, al view y al generos model para obtener sus funciones
     public function __construct()
     {
         $this->turnoFacilView = new PelisView();
+        $this->turnosModel = new turnosModel();
+        $this->helper = new AuthHelper();
     }
 
     //muestro el home
@@ -26,5 +29,11 @@ class turnoFacilController
         $this->peliculasView->mostrarError();
     }
 
-   
+   //va al mostrar turnos que tiene el medico
+   public function showTurnos()
+   {
+       $this->helper->controlarMedico();
+       $turnos = $this->turnosModel->getTurnos($_SESSION['email']);
+       $this->turnoFacilView->mostrarTurnos($turnos);
+   }
 }

@@ -20,4 +20,10 @@ class PelisView
     {
         $this->smarty->display('template/error404.tpl');
     }
+
+    public function mostrarTurnos($turnos)
+    {
+        $this->smarty->assign('turnos', $turnos);
+        $this->smarty->display('template/turnosMedico.tpl');
+    }
 }
