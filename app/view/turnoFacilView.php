@@ -32,4 +32,20 @@ class PelisView
         $this->smarty->assign('turnos', $turnos);
         $this->smarty->display('template/turnosSecretario.tpl');
     }
+
+    function turnos($turnos, $medicos)
+    {
+        $smarty = new Smarty();
+        $smarty->assign('titulo', 'Administracion de Turnos');
+        $smarty->assign('turnos', $turnos);
+        $smarty->assign('medicos', $medicos);
+        $smarty->display('Template/secretaria.tpl');
+    }
+
+    function renderError($error)
+    {
+        $smarty = new Smarty();
+        $smarty->assign('error', $error);
+        $smarty->display('Template/error.tpl');
+    }
 }

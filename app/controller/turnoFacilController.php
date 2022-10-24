@@ -29,24 +29,44 @@ class turnoFacilController
         $this->turnoFacilView->mostrarError();
     }
 
-   //va al mostrar turnos que tiene el medico
-   public function showTurnos()
-   {
-       $this->helper->controlarMedico();
-       $turnos = $this->turnosModel->getTurnos($_SESSION['email']);
-       $this->turnoFacilView->mostrarTurnos($turnos);
-   }
-   //mostrar todos los turnos
-   public function showAllTurnos()
-   {
-       $this->helper->controlarSecretario();
-       $turnos = $this->turnosModel->getAllTurnos();
-       $this->turnoFacilView->mostrarTodosTurnos($turnos);
-   }
+    //va al mostrar turnos que tiene el medico
+    public function showTurnos()
+    {
+        $this->helper->controlarMedico();
+        $turnos = $this->turnosModel->getTurnos($_SESSION['email']);
+        $this->turnoFacilView->mostrarTurnos($turnos);
+    }
+    //mostrar todos los turnos
+    public function showAllTurnos()
+    {
+        $this->helper->controlarSecretario();
+        $turnos = $this->turnosModel->getAllTurnos();
+        $this->turnoFacilView->mostrarTodosTurnos($turnos);
+    }
 
-   public function eliminarTurno($id)
+    public function eliminarTurno($id)
     {
         $this->turnosModel->borrarTurno($id);
         $this->showAllTurnos();
+    }
+
+    // Trae los turnos del medico elegido en el select
+    function getTurnsOfMedicalOfSecretary()
+    {
+        $idMedical = $_POST['medico'];
+        if (!isset($idMedical) || empty($idMedical)) {
+            $this->turnoFacilView->renderError("Error! medico no especificado");
+            return;
+        }
+        $Turno = $this->turnosModel->getTurnsByMedicalId($idMedical);
+        $Medico = $this->turnosModel->getAllMedicals();
+        $this->turnoFacilView->turnos($Turno, $Medico);
+    }
+
+    function getTurnsOfMedicalsOfSecretary()
+    {
+        $Turno = $this->turnosModel->getTurnsBySecretaryId(1);
+        $Medicos = $this->turnosModel->getAllMedicals();
+        $this->turnoFacilView->turnos($Turno, $Medicos);
     }
 }

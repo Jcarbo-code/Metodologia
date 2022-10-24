@@ -46,6 +46,13 @@ switch ($params[0]) {
     case 'eliminarTurno':
         $turnoFacilController->eliminarTurno($params[1]);
         break;
+    case 'viewSecretario':
+        $turnoFacilController->getTurnsOfMedicalsOfSecretary();
+        break;
+    case 'viewTurnsMedicoOfSecretario':
+        //muestra la misma view de secretaria pero solo con turnos de medico seleccionado
+        $turnoFacilController->getTurnsOfMedicalOfSecretary();
+        break;
     default:
         $turnoFacilController->showError();
         break;
