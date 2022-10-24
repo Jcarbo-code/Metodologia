@@ -40,6 +40,12 @@ switch ($params[0]) {
     case 'turnosMedico':
         $turnoFacilController->showTurnos();
         break;
+    case 'medicosSecretario':
+        $turnoFacilController->showAllTurnos();
+        break;
+    case 'eliminarTurno':
+        $turnoFacilController->eliminarTurno($params[1]);
+        break;
     default:
         $turnoFacilController->showError();
         break;

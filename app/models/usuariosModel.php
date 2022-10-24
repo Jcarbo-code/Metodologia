@@ -1,6 +1,6 @@
 <?php
 require_once('model.php');
-//modelo de ultra pelis
+
 class UsuariosModel extends Model
 {
 

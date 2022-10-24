@@ -26,7 +26,7 @@ class turnoFacilController
     //va al mostrar error cuando hay un problema en la URL
     public function showError()
     {
-        $this->peliculasView->mostrarError();
+        $this->turnoFacilView->mostrarError();
     }
 
    //va al mostrar turnos que tiene el medico
@@ -36,4 +36,17 @@ class turnoFacilController
        $turnos = $this->turnosModel->getTurnos($_SESSION['email']);
        $this->turnoFacilView->mostrarTurnos($turnos);
    }
+   //mostrar todos los turnos
+   public function showAllTurnos()
+   {
+       $this->helper->controlarSecretario();
+       $turnos = $this->turnosModel->getAllTurnos();
+       $this->turnoFacilView->mostrarTodosTurnos($turnos);
+   }
+
+   public function eliminarTurno($id)
+    {
+        $this->turnosModel->borrarTurno($id);
+        $this->showAllTurnos();
+    }
 }

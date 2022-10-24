@@ -18,6 +18,11 @@
                         <a class="nav-link active" aria-current="page" href="turnosMedico">mis turnos</a>
                     </li>
                 {/if}
+                {if isset($smarty.session.rol) && $smarty.session.rol=="1"}
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="medicosSecretario">ver turnos</a>
+                    </li>
+                {/if}
             </ul>
             {if isset($smarty.session.email)}
                 <div class="d-flex">

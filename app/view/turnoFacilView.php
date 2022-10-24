@@ -26,4 +26,10 @@ class PelisView
         $this->smarty->assign('turnos', $turnos);
         $this->smarty->display('template/turnosMedico.tpl');
     }
+
+    public function mostrarTodosTurnos($turnos)
+    {
+        $this->smarty->assign('turnos', $turnos);
+        $this->smarty->display('template/turnosSecretario.tpl');
+    }
 }

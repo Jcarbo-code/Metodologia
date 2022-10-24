@@ -47,4 +47,13 @@ class AuthHelper
         }
     }
 
+    public function controlarSecretario()
+    {
+        $this->startSession();
+        $this->controlarSesion();
+        if ($_SESSION['rol'] != "1") {
+            header('location:' . HOME);
+        }
+    }
+
 }
