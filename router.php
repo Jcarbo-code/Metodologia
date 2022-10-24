@@ -36,12 +36,14 @@ switch ($params[0]) {
     case 'desconectar':
         $usuariosController->desconectar();
         break;
-        //error URL
     case 'turnosMedico':
         $turnoFacilController->showTurnos();
         break;
     case 'medicosSecretario':
         $turnoFacilController->showAllTurnos();
+        break;
+    case 'medicoACargoSecretario':
+        $turnoFacilController->showMedicosACargo();
         break;
     case 'eliminarTurno':
         $turnoFacilController->eliminarTurno($params[1]);
@@ -53,6 +55,7 @@ switch ($params[0]) {
         //muestra la misma view de secretaria pero solo con turnos de medico seleccionado
         $turnoFacilController->getTurnsOfMedicalOfSecretary();
         break;
+        //error URL
     default:
         $turnoFacilController->showError();
         break;
