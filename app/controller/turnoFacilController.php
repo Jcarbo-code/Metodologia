@@ -6,13 +6,13 @@ require_once('helpers/auth.helper.php');
 //controlador de turno facil
 class turnoFacilController
 {
-    private $peliculasView;
+    private $turnoFacilView;
     private $helper;
 
-    //llamo al pelis model, al view y al generos model para obtener sus funciones
+    //llamo al model, al view y al helper para obtener sus funciones
     public function __construct()
     {
-        $this->turnoFacilView = new PelisView();
+        $this->turnoFacilView = new TurnoFacilView();
         $this->turnosModel = new turnosModel();
         $this->helper = new AuthHelper();
     }

@@ -1,6 +1,6 @@
 <?php
 require_once('./libs/smarty-3.1.39/libs/Smarty.class.php');
-//vistas de ultra pelis
+//vistas del usuario
 class UsuariosView
 {
     private $smarty;

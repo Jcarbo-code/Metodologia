@@ -1,7 +1,7 @@
 <?php
 require_once('./libs/smarty-3.1.39/libs/Smarty.class.php');
 //vistas de ultra pelis
-class PelisView
+class TurnoFacilView
 {
 
     private $smarty;

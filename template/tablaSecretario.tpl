@@ -1,5 +1,5 @@
 <div class="container">
-    <br></br>
+    <br/>
     <h3>lista de turnos</h3>
     <table class="table table-dark table-striped">
         <tr>
