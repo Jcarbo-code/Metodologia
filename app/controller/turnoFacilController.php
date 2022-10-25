@@ -65,8 +65,25 @@ class turnoFacilController
 
     function getTurnsOfMedicalsOfSecretary()
     {
-        $Turno = $this->turnosModel->getTurnsBySecretaryId(1);
+        $Turno = $this->turnosModel->getTurnsBySecretaryId("eleanor");
         $Medicos = $this->turnosModel->getAllMedicals();
         $this->turnoFacilView->turnos($Turno, $Medicos);
+    }
+
+    public function showTurnosFiltrados()
+    {
+        $medica = $_POST['medico'];
+        $paciente = $_POST['paciente'];
+        if (isset($medica)) {
+            $turnos = $this->turnosModel->getTurnosMedica($medica);
+        } else {
+            if (isset($paciente)) {
+                $turnos = $this->turnosModel->getTurnosPaciente($paciente);
+            } else {
+                $turnos = $this->turnosModel->getAllTurnos();
+            }
+        }
+        $this->helper->controlarSecretario();
+        $this->turnoFacilView->mostrarTodosTurnos($turnos);
     }
 }
