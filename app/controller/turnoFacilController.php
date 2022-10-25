@@ -80,7 +80,7 @@ class turnoFacilController
 
     public function showTurnosFiltrados()
     {
-        $medica = $_POST['medico'];
+        $medica = $_POST['medica'];
         $paciente = $_POST['paciente'];
         if (isset($medica)) {
             $turnos = $this->turnosModel->getTurnosMedica($medica);

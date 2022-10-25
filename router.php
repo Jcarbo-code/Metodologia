@@ -55,7 +55,10 @@ switch ($params[0]) {
         //muestra la misma view de secretaria pero solo con turnos de medico seleccionado
         $turnoFacilController->getTurnsOfMedicalOfSecretary();
         break;
-        //error URL
+        //error URL*/
+    case 'filtroTurno':
+        $turnoFacilController->showTurnosFiltrados();
+        break;
     default:
         $turnoFacilController->showError();
         break;
