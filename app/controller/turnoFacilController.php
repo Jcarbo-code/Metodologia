@@ -23,6 +23,14 @@ class turnoFacilController
         $this->turnoFacilView->mostrarHome();
     }
 
+    //muestro el home
+    public function showMedicosACargo()
+    {
+        $this->helper->controlarSecretario();
+        $medicos = $this->turnosModel->getMedicos($_SESSION['email']);
+        $this->turnoFacilView->mostrarMedicosACARGO($medicos);
+    }
+
     //va al mostrar error cuando hay un problema en la URL
     public function showError()
     {

@@ -15,6 +15,12 @@ class TurnoFacilView
     {
         $this->smarty->display('template/menu.tpl');
     }
+    
+    public function mostrarMedicosACARGO($medicos)
+    {
+        $this->smarty->assign('medicos', $medicos);
+        $this->smarty->display('template/medicosACargo.tpl');
+    }
 
     public function mostrarError()
     {

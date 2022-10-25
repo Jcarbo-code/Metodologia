@@ -29,6 +29,16 @@ class turnosModel extends Model
         $stm->execute([$id]);
     }
 
+    public function getMedicos($secretario)
+    {
+        $sql = "SELECT * FROM `medica` where secretario_personal_user = ?";
+        $stm = $this->PDO->prepare($sql);
+        $stm->execute([$secretario]);
+        $medicos = $stm->fetchAll(PDO::FETCH_OBJ);
+        return $medicos;
+    }
+
+
     function getTurnsBySecretaryId($id)
     {
         $queryString = "SELECT m.Nombre,m.Imagen,m.Especialidad,t.fecha,t.id_turno,p.Nombre AS'nombrePaciente',p.ObraSocial,t.dni_paciente,m.urgencia FROM turno t INNER JOIN medico m ON m.id_medico = t.id_medico JOIN paciente p on p.DNI=t.dni_paciente  WHERE m.id_secretaria = ?";
