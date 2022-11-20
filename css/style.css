@@ -1,0 +1,27 @@
+.ocultar {
+    display: none;
+}
+
+h1 {
+    text-decoration: underline;
+}
+
+body {
+    background-color: rgb(42, 56, 56);
+    color: rgb(97, 197, 201);
+}
+
+div.login {
+    display: flex;
+    justify-content: center;
+}
+
+div.fotos {
+    display: flex;
+    justify-content: center;
+}
+
+div.error {
+    display: flex;
+    justify-content: center;
+}
