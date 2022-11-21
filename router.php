@@ -59,6 +59,12 @@ switch ($params[0]) {
     case 'filtroTurno':
         $turnoFacilController->showTurnosFiltrados();
         break;
+    case 'sacarTurno':
+        $turnoFacilController->showTurnosDisponibles();
+        break;
+    case 'filtrarMedico':
+        $turnoFacilController->showTurnosDisponiblesPorMedico();
+        break;
     default:
         $turnoFacilController->showError();
         break;
