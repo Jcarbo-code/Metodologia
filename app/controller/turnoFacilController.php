@@ -98,8 +98,8 @@ class turnoFacilController
     {
         $medica = $_POST['medica'];
         $paciente = $_POST['paciente'];
-        if (isset($medica)) {
-            $turnos = $this->turnosModel->getTurnosMedica($medica);
+        /*if (isset($medica)) {
+            $turnos = $this->turnosModel->getTurnsByMedicalId($medica);
         } else {
             if (isset($paciente)) {
                 $turnos = $this->turnosModel->getTurnosPaciente($paciente);
@@ -108,6 +108,7 @@ class turnoFacilController
             }
         }
         $this->helper->controlarSecretario();
-        $this->turnoFacilView->mostrarTodosTurnos($turnos);
+        $this->turnoFacilView->mostrarTodosTurnos($turnos);*/
+        $this->turnoFacilView->mostrarError();
     }
 }
