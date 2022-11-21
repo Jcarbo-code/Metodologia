@@ -15,7 +15,7 @@ $usuariosController = new UsuariosController();
 
 if (!empty($_GET['action'])) {
     $accion = $_GET['action'];
-} else {
+} else { 
     $accion = 'home';
 }
 
