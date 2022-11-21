@@ -24,11 +24,27 @@ class turnoFacilController
     }
 
     //muestro el home
-    public function showMedicosACargo()
+    public function showMedicosACargo($mensaje = '')
     {
         $this->helper->controlarSecretario();
         $medicos = $this->turnosModel->getMedicos($_SESSION['email']);
-        $this->turnoFacilView->mostrarMedicosACARGO($medicos);
+        $this->turnoFacilView->mostrarMedicosACARGO($medicos,$mensaje);
+    }
+
+    public function cambiarHorario()
+    {
+        $medico = $_POST['medico'];
+        $horaInicio = $_POST['horaInicio'];
+        $horaFin = $_POST['horaFin'];
+        if ($horaInicio>=$horaFin){
+            //no actualizar horario
+            $this->showMedicosACargo("error! el horario de inicio es menor que el horario de fin");
+        }
+        else{
+            //actualizar el horario
+            $this->turnosModel->cambiarHorario($medico,$horaInicio,$horaFin);
+            $this->showMedicosACargo();
+        }
     }
 
     //va al mostrar error cuando hay un problema en la URL

@@ -48,6 +48,9 @@ switch ($params[0]) {
     case 'eliminarTurno':
         $turnoFacilController->eliminarTurno($params[1]);
         break;
+    case 'cambiarHorario':
+        $turnoFacilController->cambiarHorario();
+        break;
         /*case 'viewSecretario':
         $turnoFacilController->getTurnsOfMedicalsOfSecretary();
         break;

@@ -38,6 +38,13 @@ class turnosModel extends Model
         return $medicos;
     }
 
+    public function cambiarHorario($nombreUsuario,$horaInicio,$horaFin){
+        //UPDATE `medica` SET `hora_inicio` = '10:00:00', `hora_fin` = '12:00:00' WHERE `medica`.`personal_user` = 'claibyn';
+        $sql = "UPDATE `medica` SET `hora_inicio`=?, `hora_fin`=?   WHERE personal_user=?";
+        $stm = $this->PDO->prepare($sql);
+        $stm->execute([$horaInicio,$horaFin,$nombreUsuario]);
+    }
+
 
     function getTurnsBySecretaryId($id)
     {

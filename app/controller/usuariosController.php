@@ -1,4 +1,5 @@
 <?php
+require_once('app/controller/turnoFacilController.php');
 require_once('app/view/usuariosView.php');
 require_once('app/models/usuariosModel.php');
 require_once('helpers/auth.helper.php');
@@ -11,6 +12,7 @@ class UsuariosController
 
     public function __construct()
     {
+        $this->turnoFacilController = new turnoFacilController();
         $this->usuariosView = new UsuariosView();
         $this->usuariosModel = new UsuariosModel();
         $this->helper = new AuthHelper();

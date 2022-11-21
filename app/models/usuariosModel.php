@@ -30,4 +30,5 @@ class UsuariosModel extends Model
             return false;
         }
     }
+
 }
