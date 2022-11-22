@@ -67,21 +67,6 @@ class turnoFacilController
         $this->turnoFacilView->mostrarTodosTurnos($turnos);
     }
 
-    public function showTurnosDisponibles()
-    {
-        $turnos = $this->turnosModel->getTurnosDisponibles();
-        $this->turnoFacilView->mostrarTurnosDisponibles($turnos);
-    }
-
-    public function showTurnosDisponiblesPorMedico()
-    {
-        $medico = $_POST['medico'];
-        if (isset($medico)){
-            $turno = $this->turnosModel->getTurnosDisponiblesPorMedico($medico);
-        }
-        $this->turnoFacilView->mostrarTurnosDisponibles($turno);
-    }
-
     public function eliminarTurno($id)
     {
         $this->turnosModel->borrarTurno($id);

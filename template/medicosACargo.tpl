@@ -40,7 +40,7 @@
                 <input type="time" name="horaInicio" min="8:00" max="20:00" step="1800" required>
                 <br>
                 <label class="form-label">seleccione hora de fin del turno</label>
-                <input type="time" name="horaFin" min="8:00" max="20:00" step="3600" required>
+                <input type="time" name="horaFin" min="8:00" max="20:00" step="1800" required>
                 <br>
                 <button type="submit" class="btn btn-info">cambiar horario</button>
             </form>

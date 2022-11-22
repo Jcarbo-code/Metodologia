@@ -51,6 +51,15 @@ switch ($params[0]) {
     case 'cambiarHorario':
         $turnoFacilController->cambiarHorario();
         break;
+    case 'crearUsuarioVista':
+        $usuariosController->crearUsuarioVista();
+        break;
+    case 'crearUsuario':
+        $usuariosController->crearUsuario();
+        break;
+    case 'verificarPaciente':
+        $usuariosController->verificarPaciente();
+        break;
         /*case 'viewSecretario':
         $turnoFacilController->getTurnsOfMedicalsOfSecretary();
         break;

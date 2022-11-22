@@ -42,4 +42,42 @@ class UsuariosController
         $this->helper->logout();
     }
 
+    public function verificarPaciente()
+    {
+       $user = $_POST['dni'];
+       $usuario = $this->usuariosModel->getPaciente($user);
+        if (!empty($usuario)) {
+            $this->helper->logearPaciente($usuario);
+            header('location:' . HOME);
+        } else {
+            $this->showLogin('error paciente no registrado');
+        }
+    }
+
+    public function crearUsuarioVista($mensaje = '')
+    {
+        $this->usuariosView->crearUsuarioVista($mensaje);
+    }
+
+    public function crearUsuario()
+    {
+        $user = $_POST['dni'];
+        $nombre = $_POST['nombre'];
+        $apellido = $_POST['apellido'];
+        $direccion = $_POST['direccion'];
+        $telefono = $_POST['telefono'];
+        $email = $_POST['email'];
+        $obraSocial = $_POST['obraSocial'];
+
+        $usuario = $this->usuariosModel->getPaciente($user);
+
+        if (empty($usuario)) {
+           //crear usuario
+           $this->usuariosModel->crearPaciente($user,$nombre,$apellido,$direccion,$telefono,$email,$obraSocial);
+           $this->turnoFacilController->showhome();
+        } else {
+            $this->crearUsuarioVista('DNI ya registrado');
+        }
+    }
+
 }

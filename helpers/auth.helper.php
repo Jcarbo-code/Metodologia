@@ -22,6 +22,13 @@ class AuthHelper
         $_SESSION['rol'] = $usuario->tipo;
     }
 
+    public function logearPaciente($paciente)
+    {
+        $this->startSession();
+        $_SESSION['dni'] = $paciente->dni;
+        $_SESSION['rol'] = "paciente";
+    }
+
     public function logout()
     {
         $this->startSession();

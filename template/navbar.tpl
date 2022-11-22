@@ -23,13 +23,19 @@
                         <a class="nav-link active" aria-current="page" href="medicosSecretario">ver turnos</a>
                     </li>
                     <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="medicoACargoSecretario">medicos a cargo</a>
-                </li>
+                        <a class="nav-link active" aria-current="page" href="medicoACargoSecretario">medicos a cargo</a>
+                    </li>
+
                 {/if}
             </ul>
             {if isset($smarty.session.email)}
                 <div class="d-flex">
                     <p>bienvenido {$smarty.session.email}</p>
+                    <a href="desconectar"><input type="button" class="btn btn-info" value="desconectar"></a>
+                </div>
+            {elseif isset($smarty.session.dni)}
+                <div class="d-flex">
+                    <p>bienvenido {$smarty.session.dni}</p>
                     <a href="desconectar"><input type="button" class="btn btn-info" value="desconectar"></a>
                 </div>
             {else}

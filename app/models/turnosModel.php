@@ -22,24 +22,6 @@ class turnosModel extends Model
         return $turno;
     }
 
-    public function getTurnosDisponibles()
-    {
-        $sql = "SELECT * FROM `turnos`"; // WHERE turno disponible no este en la tabla de turnos ya existente
-        $stm = $this->PDO->prepare($sql);
-        $stm->execute();
-        $turno = $stm->fetchAll(PDO::FETCH_OBJ);
-        return $turno;
-    }
-
-    public function getTurnosDisponiblesPorMedico($medico)
-    {
-        $sql = "SELECT * FROM `turnos` WHERE medica_personal_user = ?";
-        $stm = $this->PDO->prepare($sql);
-        $stm->execute([$medico]);
-        $turno = $stm->fetchAll(PDO::FETCH_OBJ);
-        return $turno; 
-    }
-
     public function borrarTurno($id)
     {
         $sql = "DELETE FROM `turnos` WHERE id_turno = ?";
