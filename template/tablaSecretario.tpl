@@ -21,7 +21,7 @@
                 <td>{$turno->hora}</td>
                 <td>{$turno->turno}</td>
                 <td>{$turno->medica_personal_user}</td>
-                <td><a href="eliminarTurno/{$turno->id_turno}" class="card-link btn btn-danger btn-sm">Eliminar</a></td>
+                <td><a href="eliminarTurno/{$turno->id}" class="card-link btn btn-danger btn-sm">Eliminar</a></td>
             </tr>
         {/foreach}
     </table>

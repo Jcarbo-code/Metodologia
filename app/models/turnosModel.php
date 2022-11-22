@@ -60,7 +60,7 @@ class turnosModel extends Model
 
     public function borrarTurno($id)
     {
-        $sql = "DELETE FROM `turnos` WHERE id_turno = ?";
+        $sql = "DELETE FROM `turnos` WHERE id = ?";
         $stm = $this->PDO->prepare($sql);
         $stm->execute([$id]);
     }
