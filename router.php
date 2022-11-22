@@ -15,7 +15,7 @@ $usuariosController = new UsuariosController();
 
 if (!empty($_GET['action'])) {
     $accion = $_GET['action'];
-} else { 
+} else {
     $accion = 'home';
 }
 
@@ -50,6 +50,15 @@ switch ($params[0]) {
         break;
     case 'cambiarHorario':
         $turnoFacilController->cambiarHorario();
+        break;
+    case 'crearUsuarioVista':
+        $usuariosController->crearUsuarioVista();
+        break;
+    case 'crearUsuario':
+        $usuariosController->crearUsuario();
+        break;
+    case 'verificarPaciente':
+        $usuariosController->verificarPaciente();
         break;
         /*case 'viewSecretario':
         $turnoFacilController->getTurnsOfMedicalsOfSecretary();
