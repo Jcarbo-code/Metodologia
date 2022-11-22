@@ -60,6 +60,16 @@ switch ($params[0]) {
     case 'verificarPaciente':
         $usuariosController->verificarPaciente();
         break;
+    case 'crearTurnoVista':
+        $turnoFacilController->crearTurnoVista();
+        break;
+    case 'reservarTurno':
+        $turnoFacilController->reservarTurno();
+        break;
+    case 'verMisTurnos':
+        $turnoFacilController->verMisTurnos();
+        break;
+
         /*case 'viewSecretario':
         $turnoFacilController->getTurnsOfMedicalsOfSecretary();
         break;

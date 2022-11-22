@@ -31,6 +31,34 @@ class turnoFacilController
         $this->turnoFacilView->mostrarMedicosACARGO($medicos, $mensaje);
     }
 
+    public function crearTurnoVista($mensaje = '')
+    {
+        $medicos = $this->turnosModel->getTodosMedicos();
+        $this->turnoFacilView->crearTurnoVista($medicos,$mensaje);
+    }
+
+    public function verMisTurnos()
+    {
+        $paciente = $_SESSION['dni'];
+        $turnos = $this->turnosModel->getTurnosPaciente($paciente);
+        $this->turnoFacilView->misTurnos($turnos);
+    }
+
+    public function reservarTurno()
+    {
+       $paciente = $_SESSION['dni'];
+       $medico = $_POST['medico'];
+       $dia = $_POST['dia'];
+       $hora = $_POST['hora'];
+       $turnoOcupado = $this->turnosModel->getturno($medico,$dia,$hora);
+       if (empty($turnoOcupado) ) {
+        $this->turnosModel->crearTurno($paciente,$dia,$hora,"t",$medico,random_int(80,5000));
+        $this->verMisTurnos();
+    } else {
+        $this->crearTurnoVista('turno ocupado');
+    }
+    }
+
     public function cambiarHorario()
     {
         $medico = $_POST['medico'];

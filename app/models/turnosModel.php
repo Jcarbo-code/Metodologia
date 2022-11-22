@@ -13,6 +13,15 @@ class turnosModel extends Model
         return $turno;
     }
 
+    public function getTurno($medica,$dia,$hora)
+    {
+        $sql = "SELECT * FROM `turnos` WHERE medica_personal_user = ? AND fecha=? AND hora=?";
+        $stm = $this->PDO->prepare($sql);
+        $stm->execute([$medica,$dia,$hora]);
+        $turno = $stm->fetchAll(PDO::FETCH_OBJ);
+        return $turno;
+    }
+
     public function getAllTurnos()
     {
         $sql = "SELECT * FROM `turnos`";
@@ -21,6 +30,15 @@ class turnosModel extends Model
         $turno = $stm->fetchAll(PDO::FETCH_OBJ);
         return $turno;
     }
+
+    public function crearTurno($paciente,$dia,$hora,$turno,$medico,$id)
+    {
+        //INSERT INTO `turnos` (`paciente_dni`, `fecha`, `hora`, `turno`, `medica_personal_user`, `id`) VALUES ('8418618', '2022-11-09', '11:00:00', 't', 'seymurr', '1');
+        $sql = "INSERT INTO `turnos` (`paciente_dni`, `fecha`, `hora`, `turno`, `medica_personal_user`, `id`) VALUES (?,?,?,?,?,?)";
+        $stm = $this->PDO->prepare($sql);
+        $stm->execute([$paciente,$dia,$hora,$turno,$medico,$id]);
+    }
+
 
     public function getTurnosDisponibles()
     {
@@ -52,6 +70,15 @@ class turnosModel extends Model
         $sql = "SELECT * FROM `medica` where secretario_personal_user = ?";
         $stm = $this->PDO->prepare($sql);
         $stm->execute([$secretario]);
+        $medicos = $stm->fetchAll(PDO::FETCH_OBJ);
+        return $medicos;
+    }
+ //trae todos los medicos para el crear turno
+    public function getTodosMedicos()
+    {
+        $sql = "SELECT * FROM `medica`";
+        $stm = $this->PDO->prepare($sql);
+        $stm->execute();
         $medicos = $stm->fetchAll(PDO::FETCH_OBJ);
         return $medicos;
     }

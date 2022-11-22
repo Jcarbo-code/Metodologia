@@ -15,7 +15,20 @@ class TurnoFacilView
     {
         $this->smarty->display('template/menu.tpl');
     }
+
+    public function misTurnos($turnos)
+    {
+        $this->smarty->assign('turnos', $turnos);
+        $this->smarty->display('template/verMisTurnos.tpl');
+    }
     
+    public function crearTurnoVista($medicos,$mensaje)
+    {
+        $this->smarty->assign('medicos', $medicos);
+        $this->smarty->assign('mensaje', $mensaje);
+        $this->smarty->display('template/crearVista.tpl');
+    }
+
     public function mostrarMedicosACARGO($medicos,$mensaje = '')
     {
         $this->smarty->assign('medicos', $medicos);

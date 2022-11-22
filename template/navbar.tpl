@@ -27,6 +27,14 @@
                     </li>
 
                 {/if}
+                {if isset($smarty.session.dni)}
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="crearTurnoVista">pedir turno</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="verMisTurnos">ver mis turnos</a>
+                    </li>
+                {/if}
             </ul>
             {if isset($smarty.session.email)}
                 <div class="d-flex">
