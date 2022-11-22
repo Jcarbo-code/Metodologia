@@ -41,6 +41,7 @@ class UsuariosController
     {
         $this->helper->logout();
     }
+
     public function verificarPaciente()
     {
        $user = $_POST['dni'];
@@ -78,6 +79,5 @@ class UsuariosController
             $this->crearUsuarioVista('DNI ya registrado');
         }
     }
-
 
 }

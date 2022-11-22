@@ -25,6 +25,7 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="medicoACargoSecretario">medicos a cargo</a>
                     </li>
+
                 {/if}
             </ul>
             {if isset($smarty.session.email)}

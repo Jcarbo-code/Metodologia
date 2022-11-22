@@ -68,8 +68,17 @@ switch ($params[0]) {
         $turnoFacilController->getTurnsOfMedicalOfSecretary();
         break;
         //error URL*/
-    case 'filtroTurno':
-        $turnoFacilController->showTurnosFiltrados();
+    case 'filtroTurnoMedico':
+        $turnoFacilController->showTurnosFiltradosM();
+        break;
+    case 'filtroTurnoPaciente':
+        $turnoFacilController->showTurnosFiltradosP();
+        break;
+    case 'sacarTurno':
+        $turnoFacilController->showTurnosDisponibles();
+        break;
+    case 'filtrarMedico':
+        $turnoFacilController->showTurnosDisponiblesPorMedico();
         break;
     default:
         $turnoFacilController->showError();

@@ -15,7 +15,7 @@ class UsuariosView
         $this->smarty->assign('mensaje', $mensaje);
         $this->smarty->display('template/login.tpl');
     }
-
+    
     public function crearUsuarioVista($mensaje = '')
     {
         $this->smarty->assign('mensaje', $mensaje);

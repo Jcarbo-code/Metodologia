@@ -28,7 +28,7 @@ class turnoFacilController
     {
         $this->helper->controlarSecretario();
         $medicos = $this->turnosModel->getMedicos($_SESSION['email']);
-        $this->turnoFacilView->mostrarMedicosACARGO($medicos,$mensaje);
+        $this->turnoFacilView->mostrarMedicosACARGO($medicos, $mensaje);
     }
 
     public function cambiarHorario()
@@ -36,13 +36,12 @@ class turnoFacilController
         $medico = $_POST['medico'];
         $horaInicio = $_POST['horaInicio'];
         $horaFin = $_POST['horaFin'];
-        if ($horaInicio>=$horaFin){
+        if ($horaInicio >= $horaFin) {
             //no actualizar horario
             $this->showMedicosACargo("error! el horario de inicio es menor que el horario de fin");
-        }
-        else{
+        } else {
             //actualizar el horario
-            $this->turnosModel->cambiarHorario($medico,$horaInicio,$horaFin);
+            $this->turnosModel->cambiarHorario($medico, $horaInicio, $horaFin);
             $this->showMedicosACargo();
         }
     }
@@ -94,20 +93,23 @@ class turnoFacilController
         $this->turnoFacilView->turnos($Turno, $Medicos);
     }
 
-    public function showTurnosFiltrados()
+    public function showTurnosFiltradosM()
     {
-        $medica = $_POST['medica'];
-        $paciente = $_POST['paciente'];
-        if (isset($medica)) {
-            $turnos = $this->turnosModel->getTurnosMedica($medica);
-        } else {
-            if (isset($paciente)) {
-                $turnos = $this->turnosModel->getTurnosPaciente($paciente);
-            } else {
-                $turnos = $this->turnosModel->getAllTurnos();
-            }
-        }
         $this->helper->controlarSecretario();
-        $this->turnoFacilView->mostrarTodosTurnos($turnos);
+        $Medico = $_POST['medica'];
+        if (isset($Medico)) {
+            $Turno = $this->turnosModel->getTurnos($Medico);
+            $this->turnoFacilView->mostrarTodosTurnos($Turno);
+        }
+    }
+
+    public function showTurnosFiltradosP()
+    {
+        $this->helper->controlarSecretario();
+        $paciente = $_POST['paciente'];
+        if (isset($paciente)) {
+            $Turno = $this->turnosModel->getTurnosPaciente($paciente);
+        }
+        $this->turnoFacilView->mostrarTodosTurnos($Turno);
     }
 }

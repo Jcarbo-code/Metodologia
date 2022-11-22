@@ -40,6 +40,18 @@ class TurnoFacilView
         $this->smarty->display('template/turnosSecretario.tpl');
     }
 
+    public function mostrarTurnosDisponibles($turnos)
+    {
+        $this->smarty->assign('turnos', $turnos);
+        $this->smarty->display('template/turnoPaciente.tpl');
+    }
+
+    public function mostrarTurnosDisponiblesPorMedico($turnos)
+    {
+        $this->smarty->assign('turnos', $turnos);
+        $this->smarty->display('template/turnoPaciente.tpl');
+    }
+
     function turnos($turnos, $medicos)
     {
         $smarty = new Smarty();
